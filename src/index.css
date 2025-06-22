@@ -1,0 +1,108 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+/* Basic styles for the body to match the dark background */
+body {
+  background-color: #08062D;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Particles.css content as provided */
+.particles-container {
+  position: absolute; /* Changed to absolute for background */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Ensure it's behind other content */
+}
+
+/* Styles for the gradient text effect */
+.text-container {
+  position: relative;
+  overflow: hidden; /* Crucial to contain the video */
+  height: 10rem; /* Adjust height based on your desired text height */
+  /* Re-evaluate margin based on overall layout, keeping px-100 from parent div */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+  /* Use flexbox to center content if needed, though absolute positioning of SVG/span is typically used here */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-container .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the area without distortion */
+  mix-blend-mode: screen; /* This is the magic for the gradient effect */
+  opacity: 1; /* Ensure visibility */
+  filter: brightness(1); /* Ensure it's not dimmed by other filters */
+}
+
+.text-container .text-mask-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the SVG exactly */
+  /* Ensure the SVG width/height scales correctly, or set fixed values */
+  width: 172.89999389648438px; /* Use the exact width from your SVG viewBox */
+  height: 40.45000076293945px; /* Use the exact height from your SVG viewBox */
+  z-index: 1; /* Ensure SVG is above the video */
+  /* For the SVG to act as a mask, its fill color usually needs to be solid (e.g., white)
+     so the mix-blend-mode on the video allows it to show through. */
+}
+
+.text-container .text-mask-span {
+  font-size: 8rem; /* Use Tailwind's text-8xl or custom if needed */
+  color: transparent; /* Make text transparent so video shows through */
+  /* Webkit background clip is essential for text mask effect */
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property */
+  -webkit-text-fill-color: transparent; /* Makes text transparent on webkit browsers */
+  position: absolute;
+  /* Adjust top and left based on visual alignment with the SVG for your chosen font size */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text overlay */
+  z-index: 2; /* Ensure the span is above the SVG and video */
+  font-weight: 700; /* Poppins bold as requested */
+  white-space: nowrap; /* Prevent "I'm Adelia." from wrapping */
+}
+
+/* Ensure other content has a higher z-index if needed */
+.header-content, .project-content, .about-content, .contact-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Specific styles for the logo on top left */
+.header-logo {
+  height: 40px; /* Example height, adjust as needed */
+  width: auto;
+}
+
+/* Specific styles for navigation links */
+.header-nav ul li a {
+  text-decoration: none; /* Remove underline */
+}
+
+/* Additional styles from Adeola's CSS, adapted for Tailwind/modern CSS if necessary */
+/* Example: For the "Hi there," and "Full Stack Developer" texts */
+h5.font-light {
+    font-weight: 300; /* Poppins Light */
+}
+h4.font-light {
+    font-weight: 300; /* Poppins Light */
+}
+/* For "I'm adelia." you specified Poppins Bold, which is text-mask-span */
