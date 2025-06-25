@@ -3,7 +3,8 @@ import Header from './components/Header';
 import MyProject from './components/MyProject';
 import ProjectShowcase from './components/ProjectShowcase';
 import AboutContact from './components/AboutContact';
-import './index.css'; // Import your Tailwind CSS
+import Footer from './components/Footer'; // PASTIKAN FOOTER DIIMPORT
+import './index.css';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <MyProject />
       <ProjectShowcase />
       <AboutContact />
+      <Footer />
     </div>
   );
 }

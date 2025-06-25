@@ -1,38 +1,89 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* Import Poppins font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+*,
+html,
+body {
+  scroll-behavior: smooth;
+}
 
 /* Basic styles for the body to match the dark background */
 body {
-  background-color: #08062D;
-  color: #FFFFFF;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  background-color: #08062d;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* Particles.css content as provided */
+/* --- Fixed Navbar Styling --- */
+.fixed-navbar {
+  position: fixed;
+  top: 14px; /* Margin top 14px dari tepi atas viewport */
+  left: 100px;
+  right: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 200px);
+  z-index: 1000;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+}
+
+.header-nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.header-nav-links a:hover {
+  color: #a0aec0;
+}
+
+/* --- Header Section (Landing Page) --- */
+header {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #3e3768 0%, #08062d 100%);
+  background-size: 100% 100%;
+  /* PENTING: scroll-margin-top untuk #home agar tidak tertutup navbar */
+  /* Di sini kita set 0 karena #home itu adalah halaman pertama, tidak butuh margin atas saat di-scroll ke sana */
+  scroll-margin-top: 0;
+}
+
+/* Particles.css content (if used) */
 .particles-container {
-  position: absolute; /* Changed to absolute for background */
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 0; /* Ensure it's behind other content */
+  z-index: 0;
 }
 
 /* Styles for the gradient text effect */
 .text-container {
   position: relative;
-  overflow: hidden; /* Crucial to contain the video */
-  height: 10rem; /* Adjust height based on your desired text height */
-  /* Re-evaluate margin based on overall layout, keeping px-100 from parent div */
+  overflow: hidden;
+  height: 10rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  
-  /* Use flexbox to center content if needed, though absolute positioning of SVG/span is typically used here */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,65 +95,102 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures video covers the area without distortion */
-  mix-blend-mode: screen; /* This is the magic for the gradient effect */
-  opacity: 1; /* Ensure visibility */
-  filter: brightness(1); /* Ensure it's not dimmed by other filters */
+  object-fit: cover;
+  mix-blend-mode: screen;
+  opacity: 1;
+  filter: brightness(1);
 }
 
 .text-container .text-mask-svg {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the SVG exactly */
-  /* Ensure the SVG width/height scales correctly, or set fixed values */
-  width: 172.89999389648438px; /* Use the exact width from your SVG viewBox */
-  height: 40.45000076293945px; /* Use the exact height from your SVG viewBox */
-  z-index: 1; /* Ensure SVG is above the video */
-  /* For the SVG to act as a mask, its fill color usually needs to be solid (e.g., white)
-     so the mix-blend-mode on the video allows it to show through. */
+  transform: translate(-50%, -50%);
+  width: 172.89999389648438px;
+  height: 40.45000076293945px;
+  z-index: 1;
+}
+
+.text-container .text-mask-svg path {
+  fill: #ffffff;
 }
 
 .text-container .text-mask-span {
-  font-size: 8rem; /* Use Tailwind's text-8xl or custom if needed */
-  color: transparent; /* Make text transparent so video shows through */
-  /* Webkit background clip is essential for text mask effect */
+  font-size: 8rem;
+  color: transparent;
   -webkit-background-clip: text;
-  background-clip: text; /* Standard property */
-  -webkit-text-fill-color: transparent; /* Makes text transparent on webkit browsers */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: absolute;
-  /* Adjust top and left based on visual alignment with the SVG for your chosen font size */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the text overlay */
-  z-index: 2; /* Ensure the span is above the SVG and video */
-  font-weight: 700; /* Poppins bold as requested */
-  white-space: nowrap; /* Prevent "I'm Adelia." from wrapping */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-/* Ensure other content has a higher z-index if needed */
-.header-content, .project-content, .about-content, .contact-content {
+/* --- Other Content Sections --- */
+/* PENTING: Atur scroll-margin-top khusus untuk setiap section yang menjadi target link navigasi,
+   atau pada selector section general jika semua section butuh offset yang sama dari navbar. */
+section {
   position: relative;
-  z-index: 10;
+  z-index: 1;
+  /* KUNCI PERBAIKAN: Kurangi nilai scroll-margin-top */
+  scroll-margin-top: -140px;
 }
 
-/* Specific styles for the logo on top left */
-.header-logo {
-  height: 40px; /* Example height, adjust as needed */
-  width: auto;
+/* --- Footer Styling (TIDAK LAGI FIXED) --- */
+footer {
+  position: relative; /* Ubah dari 'fixed' menjadi 'relative' */
+  /* bottom, left, right dihapus karena tidak lagi fixed */
+  background: #08062d;
+  color: #ffffff;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1; /* Z-index menjadi lebih rendah karena tidak fixed */
+  /* Tambahkan margin-top agar ada jarak dari section About Me */
+  margin-top: 50px; /* Contoh margin, sesuaikan jika perlu */
 }
 
-/* Specific styles for navigation links */
-.header-nav ul li a {
-  text-decoration: none; /* Remove underline */
-}
-
-/* Additional styles from Adeola's CSS, adapted for Tailwind/modern CSS if necessary */
-/* Example: For the "Hi there," and "Full Stack Developer" texts */
+/* Styles for text fonts within sections */
 h5.font-light {
-    font-weight: 300; /* Poppins Light */
+  font-weight: 300;
 }
 h4.font-light {
-    font-weight: 300; /* Poppins Light */
+  font-weight: 300;
 }
-/* For "I'm adelia." you specified Poppins Bold, which is text-mask-span */
+/* Custom CSS for rotating gradient text */
+.rotating-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #ff00ff,
+    /* Magenta */ #00ffff,
+    /* Cyan */ #ff00ff /* Magenta, for a seamless loop */
+  );
+  background-size: 200% auto; /* Make the gradient wider than the text to allow movement */
+  -webkit-background-clip: text; /* Clip the background to the text shape */
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Make the text transparent so the background shows through */
+  text-fill-color: transparent;
+  animation: gradient-rotate 3s linear infinite; /* Apply the animation */
+}
+
+@keyframes gradient-rotate {
+  0% {
+    background-position: 0% center; /* Start of the gradient */
+  }
+  100% {
+    background-position: -200% center; /* Shift the background to create the rotation effect */
+  }
+}
+
+/* Custom CSS for rotating blurred spheres  */
+.sphere {
+  position: absolute;
+  border-radius: 9999px; /* Makes it a perfect circle (Tailwind's rounded-full) */
+  filter: blur(100px); /* Adjust blur strength as needed */
+  opacity: 0.7; /* Adjust transparency */
+  z-index: 5; /* Ensure spheres are behind the text but above the header background */
+  will-change: transform; /* Optimize animation performance */
+}
