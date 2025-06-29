@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss].Config} */
 module.exports = {
   content: [
     "./index.html",
@@ -6,7 +5,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Remove keyframes and animation sections from here
+      spacing: {
+        '3.5': '14px', // Custom spacing for 14px
+        '25': '100px', // Custom spacing for 100px
+        '35': '140px', // Custom spacing for 140px
+        // Add other custom values as needed
+      },
+      zIndex: { // Custom z-index values
+        '1000': '1000',
+      },
     },
   },
   plugins: [],

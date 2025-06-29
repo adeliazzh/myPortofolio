@@ -19,147 +19,11 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  /* scroll-behavior is already set in *, html, body above */
 }
 
-/* --- Fixed Navbar Styling --- */
-.fixed-navbar {
-  position: fixed;
-  top: 14px; /* Margin top 14px dari tepi atas viewport */
-  left: 100px;
-  right: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: calc(100% - 200px);
-  z-index: 1000;
-}
+/* --- Keep custom keyframes and specific global overrides here --- */
 
-.header-logo {
-  height: 40px;
-  width: auto;
-}
-
-.header-nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 8px 12px;
-  transition: color 0.3s ease;
-}
-
-.header-nav-links a:hover {
-  color: #a0aec0;
-}
-
-/* --- Header Section (Landing Page) --- */
-header {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(180deg, #3e3768 0%, #08062d 100%);
-  background-size: 100% 100%;
-  /* PENTING: scroll-margin-top untuk #home agar tidak tertutup navbar */
-  /* Di sini kita set 0 karena #home itu adalah halaman pertama, tidak butuh margin atas saat di-scroll ke sana */
-  scroll-margin-top: 0;
-}
-
-/* Particles.css content (if used) */
-.particles-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-/* Styles for the gradient text effect */
-.text-container {
-  position: relative;
-  overflow: hidden;
-  height: 10rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.text-container .video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  mix-blend-mode: screen;
-  opacity: 1;
-  filter: brightness(1);
-}
-
-.text-container .text-mask-svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 172.89999389648438px;
-  height: 40.45000076293945px;
-  z-index: 1;
-}
-
-.text-container .text-mask-svg path {
-  fill: #ffffff;
-}
-
-.text-container .text-mask-span {
-  font-size: 8rem;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-/* --- Other Content Sections --- */
-/* PENTING: Atur scroll-margin-top khusus untuk setiap section yang menjadi target link navigasi,
-   atau pada selector section general jika semua section butuh offset yang sama dari navbar. */
-section {
-  position: relative;
-  z-index: 1;
-  /* KUNCI PERBAIKAN: Kurangi nilai scroll-margin-top */
-  scroll-margin-top: -140px;
-}
-
-/* --- Footer Styling (TIDAK LAGI FIXED) --- */
-footer {
-  position: relative; /* Ubah dari 'fixed' menjadi 'relative' */
-  /* bottom, left, right dihapus karena tidak lagi fixed */
-  background: #08062d;
-  color: #ffffff;
-  padding: 15px 0;
-  text-align: center;
-  z-index: 1; /* Z-index menjadi lebih rendah karena tidak fixed */
-  /* Tambahkan margin-top agar ada jarak dari section About Me */
-  margin-top: 50px; /* Contoh margin, sesuaikan jika perlu */
-}
-
-/* Styles for text fonts within sections */
-h5.font-light {
-  font-weight: 300;
-}
-h4.font-light {
-  font-weight: 300;
-}
 /* Custom CSS for rotating gradient text */
 .rotating-gradient-text {
   background: linear-gradient(
@@ -185,31 +49,9 @@ h4.font-light {
   }
 }
 
-/* Custom CSS for rotating blurred spheres  */
-.sphere {
-  position: absolute;
-  border-radius: 9999px; /* Makes it a perfect circle (Tailwind's rounded-full) */
-  filter: blur(100px); /* Adjust blur strength as needed */
-  opacity: 0.7; /* Adjust transparency */
-  z-index: 5; /* Ensure spheres are behind the text but above the header background */
-  will-change: transform; /* Optimize animation performance */
-}
 
 /* Custom Keyframes for the Animation */
-/* Add these styles to your index.css file */
-.mouse-scroll-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.mouse-scroll-svg {
-  width: 4rem; /* w-16 */
-  height: 6rem; /* h-24 */
-}
-
-/* Keyframes for the scroll path animation */
+/* These are complex SVG animations and should remain in CSS */
 @keyframes mouse-scroll-path-animation {
   0% {
     transform: translate(36px, 35px); /* Posisi atas */
@@ -222,38 +64,10 @@ h4.font-light {
   }
 }
 
-/* Apply the animation to the scroll path */
-.mouse-scroll-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.mouse-scroll-svg {
-  width: 4rem; /* w-16 */
-  height: 6rem; /* h-24 */
-}
-
-/* Keyframes for the scroll path animation */
-@keyframes mouse-scroll-path-animation {
-  0% {
-    transform: translate(36px, 35px); /* Posisi atas */
-  }
-  50% {
-    transform: translate(36px, 40px); /* Posisi bawah, berhenti sebelum 'V' */
-  }
-  100% {
-    transform: translate(36px, 35px); /* Kembali ke posisi atas */
-  }
-}
-
-/* Apply the animation to the scroll path */
 .mouse-scroll-path {
   animation: mouse-scroll-path-animation 2s ease-in-out infinite;
 }
 
-/* Keyframes for the arrow jump animation */
 @keyframes arrow-jump-animation {
   0%,
   100% {
@@ -266,23 +80,33 @@ h4.font-light {
   }
 }
 
-/* Apply the animation to the arrow */
 .arrow-jump {
   animation: arrow-jump-animation 1.5s ease-in-out infinite;
   transform-origin: center;
 }
 
-/* NEW: Keyframes for the mouse gradient rotating animation */
-@keyframes mouse-gradient-rotate { /* Nama keyframes diubah di sini */
+@keyframes mouse-gradient-rotate {
   0% {
-    transform: rotate(0deg); /* Mulai dari 0 derajat */
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg); /* Berputar penuh 360 derajat */
+    transform: rotate(360deg);
   }
 }
 
-/* Apply animation to the linearGradient itself */
 #animatedGradient {
-  animation: mouse-gradient-rotate 3s linear infinite; /* Referensikan nama keyframes yang baru di sini */
+  animation: mouse-gradient-rotate 3s linear infinite;
+}
+
+/* General section scroll-margin-top to account for fixed navbar */
+/* This will prevent content from being hidden behind the fixed nav when using anchor links */
+section {
+  scroll-margin-top: 60px; /* Adjust this value based on your actual fixed navbar height on desktop */
+}
+
+/* Responsive adjustment for scroll-margin-top for smaller screens if navbar height changes */
+@media (max-width: 767px) { /* Adjust this breakpoint if your mobile navbar height is different */
+  section {
+    scroll-margin-top: 50px; /* Example: If your mobile navbar is 50px tall */
+  }
 }
