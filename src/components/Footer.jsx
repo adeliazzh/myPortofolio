@@ -15,16 +15,16 @@ const Footer = () => {
     >
       {/* Ikon Kontak */}
       <div className="flex justify-around items-center w-[calc(100%-280px)]">
-        <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noopener noreferrer" className="text-3xl text-white hover:text-blue-500 transition-colors duration-300 mx-4">
+        <a href="https://www.linkedin.com/in/adeliazhafira" target="_blank" rel="noopener noreferrer" className="text-3xl text-white hover:text-blue-500 transition-colors duration-300 mx-4">
           <FaLinkedin />
         </a>
-        <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer" className="text-3xl text-white hover:text-gray-400 transition-colors duration-300 mx-4">
+        <a href="https://github.com/adeliazzh" target="_blank" rel="noopener noreferrer" className="text-3xl text-white hover:text-gray-400 transition-colors duration-300 mx-4">
           <FaGithub />
         </a>
-        <a href="mailto:your.email@example.com" className="text-3xl text-white hover:text-red-500 transition-colors duration-300 mx-4">
+        <a href="mailto:adeliazhafiraa@gmail.com" className="text-3xl text-white hover:text-red-500 transition-colors duration-300 mx-4">
           <FaEnvelope />
         </a>
-        <a href="https://www.instagram.com/your-instagram/" target="_blank" rel="noopener noreferrer" className="text-3xl text-white hover:text-pink-500 transition-colors duration-300 mx-4">
+        <a href="https://www.instagram.com/adeliazzh/" target="_blank" rel="noopener noreferrer" className="text-3xl text-white hover:text-pink-500 transition-colors duration-300 mx-4">
           <FaInstagram />
         </a>
       </div>

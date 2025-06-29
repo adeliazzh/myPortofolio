@@ -68,16 +68,7 @@ const Header = () => {
     <header
       id="home"
       className="relative min-h-screen overflow-hidden flex flex-col justify-center items-center text-white"
-      // HAPUS background style dari <header> jika div di bawah ini yang akan menjadi background utama
-      // style={{
-      //   background: "linear-gradient(180deg, #3E3768 0%, #08062D 100%)",
-      //   backgroundSize: "100% 100%",
-      // }}
     >
-      {/* Background Gradient Layer (paling belakang) */}
-      {/* Tambahkan w-full h-full agar div memiliki dimensi */}
-      {/* Gunakan inset-0 untuk mengisi penuh parent dengan positioning absolute */}
-      {/* z-index diatur lebih rendah dari Particles, tapi tetap di belakang konten utama */}
       <div
         className="absolute inset-0 z-0 w-full h-full"
         style={{
@@ -95,7 +86,7 @@ const Header = () => {
 
       {/* Header Navigation - FIXED POSITION & SHADING */}
       <nav className="fixed-navbar">
-        <img src={adeliaLogo} alt="adelia logo" className="h-6 header-logo" />{" "}
+        <img src={adeliaLogo} alt="adelia logo" className="header-logo" style={{ height: '34px', width: 'auto' }} />
         <ul className="flex space-x-8 text-lg header-nav-links">
           <li>
             <a href="#home" className="hover:text-gray-400">
@@ -112,6 +103,11 @@ const Header = () => {
               About
             </a>
           </li>
+          <li>
+            <a href="#contact" className="hover:text-gray-400">
+              Contact
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -119,8 +115,8 @@ const Header = () => {
       {/* Pastikan z-index konten utama lebih tinggi dari elemen background */}
       <div className="relative z-30 text-center px-100">
         <div className="px-12">
-          <h1 className="text-left text-2xl font-thin">Hi there,</h1>
-          <p className="mt-8 text-left font-black text-5xl">
+          <h1 className="text-left text-3xl font-thin">Hi there,</h1>
+          <p className="mt-8 text-left font-black text-7xl">
             I'm
             <span className="rotating-gradient-text"> adelia.</span>
           </p>

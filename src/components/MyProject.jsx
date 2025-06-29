@@ -1,5 +1,6 @@
 import React from 'react';
 import mockupImage from '../assets/Mockup1.png';
+import MouseScrollAnimation from './MouseScrollAnimation'; // Adjust path if needed
 
 const MyProject = () => {
   return (
@@ -9,7 +10,6 @@ const MyProject = () => {
       style={{
         paddingLeft: '140px',
         paddingRight: '100px',
-        // Tidak perlu scroll-margin-top di sini. Akan kita tambahkan di CSS global.
       }}
     >
       <div className="w-1/2 pr-10 text-left">
@@ -20,12 +20,15 @@ const MyProject = () => {
           Developed and deployed impactful web and mobile applications using Laravel, PHP, JavaScript, Flutter, and Dart.
         </p>
         <p className="text-xl font-light leading-loose">
-          Passionate about building intelligent systems. My work integrates advanced AI techniques like Computer Vision, NLP, and Deep Learning to create smart and impactful applications.
+          Passionionate about building intelligent systems. My work integrates advanced AI techniques like Computer Vision, NLP, and Deep Learning to create smart and impactful applications.
         </p>
       </div>
       <div className="w-1/2 flex justify-center items-center">
-        {/* Adjusted image size */}
-        <img src={mockupImage} alt="Project Mockup" className="w-4/5 h-auto" /> {/* Mengembalikan ke w-4/5 agar tidak terlalu besar */}
+        <img src={mockupImage} alt="Project Mockup" className="w-4/5 h-auto" />
+      </div>
+
+      <div className="absolute bottom-60 left-1/2 -translate-x-1/2 z-10">
+        <MouseScrollAnimation />
       </div>
     </section>
   );

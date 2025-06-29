@@ -42,7 +42,6 @@ const AboutContact = () => {
       </div>
 
       {/* Bagian kontak dipindahkan ke Footer.jsx */}
-      {/* <div id="contact" ... > ... </div> */}
     </section>
   );
 };

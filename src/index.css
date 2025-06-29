@@ -194,3 +194,95 @@ h4.font-light {
   z-index: 5; /* Ensure spheres are behind the text but above the header background */
   will-change: transform; /* Optimize animation performance */
 }
+
+/* Custom Keyframes for the Animation */
+/* Add these styles to your index.css file */
+.mouse-scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mouse-scroll-svg {
+  width: 4rem; /* w-16 */
+  height: 6rem; /* h-24 */
+}
+
+/* Keyframes for the scroll path animation */
+@keyframes mouse-scroll-path-animation {
+  0% {
+    transform: translate(36px, 35px); /* Posisi atas */
+  }
+  50% {
+    transform: translate(36px, 40px); /* Posisi bawah, berhenti sebelum 'V' */
+  }
+  100% {
+    transform: translate(36px, 35px); /* Kembali ke posisi atas */
+  }
+}
+
+/* Apply the animation to the scroll path */
+.mouse-scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mouse-scroll-svg {
+  width: 4rem; /* w-16 */
+  height: 6rem; /* h-24 */
+}
+
+/* Keyframes for the scroll path animation */
+@keyframes mouse-scroll-path-animation {
+  0% {
+    transform: translate(36px, 35px); /* Posisi atas */
+  }
+  50% {
+    transform: translate(36px, 40px); /* Posisi bawah, berhenti sebelum 'V' */
+  }
+  100% {
+    transform: translate(36px, 35px); /* Kembali ke posisi atas */
+  }
+}
+
+/* Apply the animation to the scroll path */
+.mouse-scroll-path {
+  animation: mouse-scroll-path-animation 2s ease-in-out infinite;
+}
+
+/* Keyframes for the arrow jump animation */
+@keyframes arrow-jump-animation {
+  0%,
+  100% {
+    transform: translate(54px, 52.246px) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(54px, 52.246px) translateY(-5px);
+    opacity: 0.8;
+  }
+}
+
+/* Apply the animation to the arrow */
+.arrow-jump {
+  animation: arrow-jump-animation 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* NEW: Keyframes for the mouse gradient rotating animation */
+@keyframes mouse-gradient-rotate { /* Nama keyframes diubah di sini */
+  0% {
+    transform: rotate(0deg); /* Mulai dari 0 derajat */
+  }
+  100% {
+    transform: rotate(360deg); /* Berputar penuh 360 derajat */
+  }
+}
+
+/* Apply animation to the linearGradient itself */
+#animatedGradient {
+  animation: mouse-gradient-rotate 3s linear infinite; /* Referensikan nama keyframes yang baru di sini */
+}
