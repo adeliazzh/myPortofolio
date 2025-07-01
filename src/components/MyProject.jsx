@@ -6,6 +6,8 @@ const MyProject = () => {
   return (
     <section
       id="projects"
+      // Hapus h-[1024px] jika tidak benar-benar diperlukan dan menyebabkan masalah
+      // Gunakan min-h-screen untuk memastikan section setidaknya setinggi viewport
       className="relative min-h-screen flex flex-col md:flex-row items-center justify-between py-10 md:py-20
                  px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32" /* Responsive padding */
     >
@@ -24,7 +26,9 @@ const MyProject = () => {
         <img src={mockupImage} alt="Project Mockup" className="w-4/5 max-w-xs md:max-w-none md:w-4/5 h-auto" />
       </div>
 
-      <div className="absolute bottom-10 md:bottom-20 left-1/2 -translate-x-1/2 z-10">
+      {/* Mouse Scroll Animation - HIDDEN ON SMALL SCREENS, VISIBLE ON MD AND UP */}
+      {/* Tambahkan kelas 'hidden md:block' pada div ini */}
+      <div className="absolute bottom-10 md:bottom-20 left-1/2 -translate-x-1/2 z-50 hidden md:block">
         <MouseScrollAnimation />
       </div>
     </section>

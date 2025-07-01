@@ -92,7 +92,9 @@ const Header = () => {
                       md:w-[calc(100%-8rem)] md:left-8 md:right-8 /* Medium screens: w/ 4rem padding on each side */
                       lg:w-[calc(100%-12.5rem)] lg:left-[6.25rem] lg:right-[6.25rem] /* Large screens: w/ 6.25rem (100px) padding on each side */
                      ">
-        <img src={adeliaLogo} alt="adelia logo" className="h-8 md:h-10 w-auto" /> {/* Responsive logo height */}
+        <a href="#home" onClick={() => setIsMobileMenuOpen(false)}> {/* Add onClick to close mobile menu if open */}
+          <img src={adeliaLogo} alt="adelia logo" className="h-8 md:h-10 w-auto" /> 
+        </a>
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-4 lg:space-x-8 text-base lg:text-lg">
@@ -129,9 +131,6 @@ const Header = () => {
       {/* Mobile Menu Overlay/Sidebar (You'll implement this) */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-[#08062D] bg-opacity-95 z-[999] flex flex-col items-center justify-center space-y-8 md:hidden">
-          <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-4 right-4 text-white text-3xl focus:outline-none">
-            <FaTimes />
-          </button>
           <ul className="text-3xl space-y-8">
             <li><a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-gray-400">Home</a></li>
             <li><a href="#projects" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-gray-400">Project</a></li>

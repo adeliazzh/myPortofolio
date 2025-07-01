@@ -52,15 +52,29 @@ body {
 
 /* Custom Keyframes for the Animation */
 /* These are complex SVG animations and should remain in CSS */
+.mouse-scroll-container {
+  width: 72px; /* Sesuai viewBox SVG */
+  height: 72px; /* Sesuai viewBox SVG */
+  position: relative; /* Penting untuk SVG di dalamnya */
+  z-index: 50; /* Pastikan ini cukup tinggi */
+}
+
+.mouse-scroll-svg {
+  width: 100%;
+  height: 100%;
+  display: block; /* Menghilangkan spasi ekstra di bawah SVG */
+}
+
+/* Custom Keyframes for the Animation */
 @keyframes mouse-scroll-path-animation {
   0% {
-    transform: translate(36px, 35px); /* Posisi atas */
+    transform: translate(36px, 35px);
   }
   50% {
-    transform: translate(36px, 40px); /* Posisi bawah, berhenti sebelum 'V' */
+    transform: translate(36px, 40px);
   }
   100% {
-    transform: translate(36px, 35px); /* Kembali ke posisi atas */
+    transform: translate(36px, 35px);
   }
 }
 
@@ -96,17 +110,38 @@ body {
 
 #animatedGradient {
   animation: mouse-gradient-rotate 3s linear infinite;
+  /* Pastikan gradientUnits="userSpaceOnUse" di SVG agar ini bekerja */
 }
 
-/* General section scroll-margin-top to account for fixed navbar */
-/* This will prevent content from being hidden behind the fixed nav when using anchor links */
+
+/* --- Other Content Sections --- */
 section {
-  scroll-margin-top: 60px; /* Adjust this value based on your actual fixed navbar height on desktop */
+  position: relative;
+  z-index: 1;
 }
 
-/* Responsive adjustment for scroll-margin-top for smaller screens if navbar height changes */
-@media (max-width: 767px) { /* Adjust this breakpoint if your mobile navbar height is different */
+@media (max-width: 767px) {
   section {
-    scroll-margin-top: 50px; /* Example: If your mobile navbar is 50px tall */
+    scroll-margin-top: 60px;
   }
+}
+
+/* Styles for text fonts within sections */
+h5.font-light {
+    font-weight: 300;
+}
+h4.font-light {
+    font-weight: 300;
+}
+
+/* --- Footer Styling --- */
+footer {
+  position: relative;
+  background: #08062d;
+  color: #ffffff;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1;
+  margin-top: auto;
+  padding-bottom: 20px;
 }

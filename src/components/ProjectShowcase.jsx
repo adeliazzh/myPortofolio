@@ -12,7 +12,8 @@ const ProjectShowcase = () => {
       alt: 'OCR & Symbol Detection',
       title: 'Optical Character Recognition (OCR) for Packaging Verification',
       description: 'Developed an automated pipeline for verifying product packaging labels at PT Mattel Indonesia. The system processes digital images of product labels and requirements to detect and recognize symbols and text.',
-      technologies: ['PyTorch', 'YOLOv11', 'YOLOv12', 'RF-DETR', 'Llama']
+      technologies: ['PyTorch', 'YOLOv11', 'YOLOv12', 'RF-DETR', 'Llama'],
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Tambahkan link di sini
     },
     {
       id: 'project2',
@@ -20,7 +21,8 @@ const ProjectShowcase = () => {
       alt: 'BUDI AI Chatbot',
       title: 'BUDI AI Chatbot',
       description: 'BUDI or Study Buddy Chatbot, is an AI-powered interactive learning partner designed to answer science questions and engage in casual conversation.',
-      technologies: ['DialoGPT', 'Flutter', 'Dart']
+      technologies: ['DialoGPT', 'Flutter', 'Dart'],
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Tambahkan link di sini
     },
     {
       id: 'project3',
@@ -28,7 +30,8 @@ const ProjectShowcase = () => {
       alt: 'Object Detection',
       title: 'Object Detection',
       description: 'This computer vision project utilizes YOLOv8N and Faster R-CNN object detection models to classify waste.',
-      technologies: ['YOLOv8N', 'PyTorch', 'CNN', 'OpenCV']
+      technologies: ['YOLOv8N', 'PyTorch', 'CNN', 'OpenCV'],
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Tambahkan link di sini
     },
     {
       id: 'project4',
@@ -36,7 +39,8 @@ const ProjectShowcase = () => {
       alt: 'TappyTale',
       title: 'TappyTale',
       description: 'Innovative educational platform designed to help busy parents engage in their children\'s growth through interactive storytelling and sensory play. The platform consists of two integrated components: an Android application and a web-based platform. (Win "Harapan 1 Android Programming at IOFEST 2025")',
-      technologies: ['Flutter', 'Dart', 'RestAPI', 'Llama']
+      technologies: ['Flutter', 'Dart', 'RestAPI', 'Llama'],
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Tambahkan link di sini
     },
   ];
 
@@ -49,11 +53,16 @@ const ProjectShowcase = () => {
                    grid-cols-1                /* Default: 1 column on mobile */
                    md:grid-cols-2             /* Medium screens: 2 columns */
                    lg:grid-cols-3             /* Large screens: 3 columns */
-                   auto-rows-fr                /* Ensure rows take equal height */
+                   auto-rows-fr               /* Ensure rows take equal height */
                    min-h-[400px] md:min-h-[600px] lg:min-h-[600px]" /* Min height for the grid */
       >
         {/* Project 1: Top-Left Wide Card */}
-        <div className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <a 
+          href={projects[0].link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block" // Tambahkan 'block' untuk memastikan link mengisi seluruh div
+        >
           <img
             src={projects[0].src}
             alt={projects[0].alt}
@@ -75,10 +84,15 @@ const ProjectShowcase = () => {
               ))}
             </div>
           </div>
-        </div>
+        </a>
 
         {/* Project 2: Top-Right Small Card */}
-        <div className="col-span-1 lg:col-span-1 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <a 
+          href={projects[1].link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="col-span-1 lg:col-span-1 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block"
+        >
           <img
             src={projects[1].src}
             alt={projects[1].alt}
@@ -100,10 +114,15 @@ const ProjectShowcase = () => {
               ))}
             </div>
           </div>
-        </div>
+        </a>
 
         {/* Project 3: Bottom-Left Small Card */}
-        <div className="col-span-1 lg:col-span-1 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <a 
+          href={projects[2].link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="col-span-1 lg:col-span-1 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block"
+        >
           <img
             src={projects[2].src}
             alt={projects[2].alt}
@@ -125,10 +144,15 @@ const ProjectShowcase = () => {
               ))}
             </div>
           </div>
-        </div>
+        </a>
 
         {/* Project 4: Bottom-Right Wide Card */}
-        <div className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <a 
+          href={projects[3].link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block"
+        >
           <img
             src={projects[3].src}
             alt={projects[3].alt}
@@ -150,7 +174,7 @@ const ProjectShowcase = () => {
               ))}
             </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <div className="w-full text-right mt-8">
