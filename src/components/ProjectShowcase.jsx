@@ -28,7 +28,7 @@ const ProjectShowcase = () => {
       alt: 'Object Detection',
       title: 'Object Detection',
       description: 'This computer vision project utilizes YOLOv8N and Faster R-CNN object detection models to classify waste.',
-      technologies: ['YOLOv8N', 'PyTorch', 'CNN']
+      technologies: ['YOLOv8N', 'PyTorch', 'CNN', 'OpenCV']
     },
     {
       id: 'project4',
