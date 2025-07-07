@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png';
@@ -13,7 +14,7 @@ const ProjectShowcase = () => {
       title: 'Optical Character Recognition (OCR) for Packaging Verification',
       description: 'Developed an automated pipeline for verifying product packaging labels at PT Mattel Indonesia. The system processes digital images of product labels and requirements to detect and recognize symbols and text.',
       technologies: ['PyTorch', 'YOLOv11', 'YOLOv12', 'RF-DETR', 'Llama'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Tambahkan link di sini
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
     },
     {
       id: 'project2',
@@ -22,7 +23,7 @@ const ProjectShowcase = () => {
       title: 'BUDI AI Chatbot',
       description: 'BUDI or Study Buddy Chatbot, is an AI-powered interactive learning partner designed to answer science questions and engage in casual conversation.',
       technologies: ['DialoGPT', 'Flutter', 'Dart'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Tambahkan link di sini
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
     },
     {
       id: 'project3',
@@ -31,7 +32,7 @@ const ProjectShowcase = () => {
       title: 'Object Detection',
       description: 'This computer vision project utilizes YOLOv8N and Faster R-CNN object detection models to classify waste.',
       technologies: ['YOLOv8N', 'PyTorch', 'CNN', 'OpenCV'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Tambahkan link di sini
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
     },
     {
       id: 'project4',
@@ -40,7 +41,7 @@ const ProjectShowcase = () => {
       title: 'TappyTale',
       description: 'Innovative educational platform designed to help busy parents engage in their children\'s growth through interactive storytelling and sensory play. The platform consists of two integrated components: an Android application and a web-based platform. (Win "Harapan 1 Android Programming at IOFEST 2025")',
       technologies: ['Flutter', 'Dart', 'RestAPI', 'Llama'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Tambahkan link di sini
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
     },
   ];
 
@@ -50,10 +51,10 @@ const ProjectShowcase = () => {
     >
       <div
         className="grid gap-4 sm:gap-6 w-full max-w-screen-xl
-                   grid-cols-1                /* Default: 1 column on mobile */
-                   md:grid-cols-2             /* Medium screens: 2 columns */
-                   lg:grid-cols-3             /* Large screens: 3 columns */
-                   auto-rows-fr               /* Ensure rows take equal height */
+                   grid-cols-1             /* Default: 1 column on mobile */
+                   md:grid-cols-2          /* Medium screens: 2 columns */
+                   lg:grid-cols-3          /* Large screens: 3 columns */
+                   auto-rows-fr            /* Ensure rows take equal height */
                    min-h-[400px] md:min-h-[600px] lg:min-h-[600px]" /* Min height for the grid */
       >
         {/* Project 1: Top-Left Wide Card */}
@@ -61,7 +62,7 @@ const ProjectShowcase = () => {
           href={projects[0].link} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block" // Tambahkan 'block' untuk memastikan link mengisi seluruh div
+          className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block"
         >
           <img
             src={projects[0].src}
@@ -178,9 +179,9 @@ const ProjectShowcase = () => {
       </div>
 
       <div className="w-full text-right mt-8">
-        <a href="/another-projects-page" className="text-blue-400 hover:text-blue-600 text-lg md:text-xl font-medium">
+        <Link to="/another-projects-page" className="text-blue-400 hover:text-blue-600 text-lg md:text-xl font-medium">
           More of my projects &gt;
-        </a>
+        </Link>
       </div>
     </section>
   );

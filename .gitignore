@@ -7,10 +7,25 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Diagnostic reports (https://nodejs.org/api/report.html)
+.report/
+
+# Node.js
+node_modules/
+dist/
+build/ # Jika Vite Anda build ke folder 'build'
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+*.tgz
+.npm/
+.yarn/
+.pnpm-store/
+.eslintcache
+.prettiercache
 
 # Editor directories and files
 .vscode/*

@@ -1,0 +1,12 @@
+version: '3.8' # Versi Docker Compose
+
+services:
+  frontend: # Nama layanan Anda (bisa apa saja, misal 'my-portfolio-app')
+    build:
+      context: . # Konteks build adalah direktori saat ini (tempat Dockerfile berada)
+      dockerfile: Dockerfile # Nama file Dockerfile Anda
+    ports:
+      - "80:80" # Map port: 'HOST_PORT:CONTAINER_PORT'
+    volumes:
+      - .:/app # Opsional: Mount kode lokal ke dalam container (berguna untuk pengembangan)
+    restart: always # Selalu restart container jika berhenti
