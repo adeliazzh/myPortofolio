@@ -5,8 +5,10 @@ const AboutContact = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col justify-center items-center py-10 md:py-20
-                 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32" /* Responsive padding */
+      // Adjusted vertical padding for mobile, keeping desktop padding.
+      // Added pt-24 for mobile to push content below the fixed header.
+      className="relative min-h-screen flex flex-col justify-center items-center pt-0 pb-16 md:py-20
+                 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32"
     >
       <div className="flex flex-col md:flex-row items-center md:items-start justify-between w-full">
         <div className="w-full md:w-3/4 text-center md:text-left mb-8 md:mb-0">
@@ -35,7 +37,7 @@ const AboutContact = () => {
           <img
             src={profilePhoto}
             alt="Adelia Zhafira Puspasari"
-            className="rounded-lg w-48 h-56 md:w-72 md:h-80 object-cover" /* Responsive image size */
+            className="rounded-lg w-48 h-56 md:w-72 md:h-80 object-cover"
           />
         </div>
       </div>

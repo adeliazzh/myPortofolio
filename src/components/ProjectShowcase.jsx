@@ -55,13 +55,13 @@ const ProjectShowcase = () => {
                    md:grid-cols-2          /* Medium screens: 2 columns */
                    lg:grid-cols-3          /* Large screens: 3 columns */
                    auto-rows-fr            /* Ensure rows take equal height */
-                   min-h-[400px] md:min-h-[600px] lg:min-h-[600px]" /* Min height for the grid */
+                   min-h-[300px] md:min-h-[450px] lg:min-h-[450px]" /* Adjusted Min height for the grid */
       >
         {/* Project 1: Top-Left Wide Card */}
-        <a 
-          href={projects[0].link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={projects[0].link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block"
         >
           <img
@@ -70,16 +70,16 @@ const ProjectShowcase = () => {
             className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x400?text=Image+Error"; }}
           />
-          <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-3 sm:p-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"> {/* Adjusted padding */}
+            <h3 className="text-lg sm:text-xl font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"> {/* Adjusted font size */}
               {projects[0].title}
             </h3>
-            <p className="text-sm sm:text-lg mb-2 sm:mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+            <p className="text-xs sm:text-base mb-1 sm:mb-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100"> {/* Adjusted font size and margin */}
               {projects[0].description}
             </p>
-            <div className="flex flex-wrap gap-1 sm:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+            <div className="flex flex-wrap gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
               {projects[0].technologies.map((tech, index) => (
-                <span key={index} className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-600 text-xs sm:text-sm rounded-full">
+                <span key={index} className="px-2 py-0.5 sm:px-2.5 sm:py-0.5 bg-blue-600 text-xs rounded-full"> {/* Adjusted padding and font size */}
                   {tech}
                 </span>
               ))}
@@ -88,10 +88,10 @@ const ProjectShowcase = () => {
         </a>
 
         {/* Project 2: Top-Right Small Card */}
-        <a 
-          href={projects[1].link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={projects[1].link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="col-span-1 lg:col-span-1 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block"
         >
           <img
@@ -100,16 +100,16 @@ const ProjectShowcase = () => {
             className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/400x400?text=Image+Error"; }}
           />
-          <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-3 sm:p-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"> {/* Adjusted padding */}
+            <h3 className="text-lg sm:text-xl font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"> {/* Adjusted font size */}
               {projects[1].title}
             </h3>
-            <p className="text-sm sm:text-lg mb-2 sm:mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+            <p className="text-xs sm:text-base mb-1 sm:mb-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100"> {/* Adjusted font size and margin */}
               {projects[1].description}
             </p>
-            <div className="flex flex-wrap gap-1 sm:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+            <div className="flex flex-wrap gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
               {projects[1].technologies.map((tech, index) => (
-                <span key={index} className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-600 text-xs sm:text-sm rounded-full">
+                <span key={index} className="px-2 py-0.5 sm:px-2.5 sm:py-0.5 bg-blue-600 text-xs rounded-full"> {/* Adjusted padding and font size */}
                   {tech}
                 </span>
               ))}
@@ -118,10 +118,10 @@ const ProjectShowcase = () => {
         </a>
 
         {/* Project 3: Bottom-Left Small Card */}
-        <a 
-          href={projects[2].link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={projects[2].link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="col-span-1 lg:col-span-1 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block"
         >
           <img
@@ -130,16 +130,16 @@ const ProjectShowcase = () => {
             className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/400x400?text=Image+Error"; }}
           />
-          <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-3 sm:p-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"> {/* Adjusted padding */}
+            <h3 className="text-lg sm:text-xl font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"> {/* Adjusted font size */}
               {projects[2].title}
             </h3>
-            <p className="text-sm sm:text-lg mb-2 sm:mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+            <p className="text-xs sm:text-base mb-1 sm:mb-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100"> {/* Adjusted font size and margin */}
               {projects[2].description}
             </p>
-            <div className="flex flex-wrap gap-1 sm:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+            <div className="flex flex-wrap gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
               {projects[2].technologies.map((tech, index) => (
-                <span key={index} className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-600 text-xs sm:text-sm rounded-full">
+                <span key={index} className="px-2 py-0.5 sm:px-2.5 sm:py-0.5 bg-blue-600 text-xs rounded-full"> {/* Adjusted padding and font size */}
                   {tech}
                 </span>
               ))}
@@ -148,10 +148,10 @@ const ProjectShowcase = () => {
         </a>
 
         {/* Project 4: Bottom-Right Wide Card */}
-        <a 
-          href={projects[3].link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={projects[3].link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 rounded-lg overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300 block"
         >
           <img
@@ -160,16 +160,16 @@ const ProjectShowcase = () => {
             className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/800x400?text=Image+Error"; }}
           />
-          <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-3 sm:p-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"> {/* Adjusted padding */}
+            <h3 className="text-lg sm:text-xl font-bold mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"> {/* Adjusted font size */}
               {projects[3].title}
             </h3>
-            <p className="text-sm sm:text-lg mb-2 sm:mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+            <p className="text-xs sm:text-base mb-1 sm:mb-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100"> {/* Adjusted font size and margin */}
               {projects[3].description}
             </p>
-            <div className="flex flex-wrap gap-1 sm:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+            <div className="flex flex-wrap gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
               {projects[3].technologies.map((tech, index) => (
-                <span key={index} className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-600 text-xs sm:text-sm rounded-full">
+                <span key={index} className="px-2 py-0.5 sm:px-2.5 sm:py-0.5 bg-blue-600 text-xs rounded-full"> {/* Adjusted padding and font size */}
                   {tech}
                 </span>
               ))}
