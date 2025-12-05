@@ -1,5 +1,7 @@
 import React from "react";
 import profilePhoto from "../assets/profilePhoto.jpg";
+import portfolioPdf from "../assets/Portfolio.pdf";
+import cvPdf from "../assets/CV_Adelia Zhafira Puspasari.pdf";
 
 const AboutContact = () => {
   return (
@@ -15,23 +17,35 @@ const AboutContact = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center md:text-left w-full mb-4 md:mb-6">
             About me.
           </h2>
-          <h3 className="text-lg md:text-xl mb-2">
-            "The computer was born to solve problems that did not exist before."
-          </h3>
-          <p className="text-base md:text-lg font-light mb-4 text-justify">
-            – Bill Gates
-          </p>
 
           <p className="text-base md:text-lg font-light leading-relaxed mb-4 text-justify">
-            This idea fuels my approach to technology. I'm Adelia Zhafira
+            Hey, my name is Adelia Zhafira
             Puspasari, an Informatics student at President University,
             specializing in AI (Machine Learning, Computer Vision, NLP). My
             passion lies in transforming innovative ideas into real-world
-            applications through full-stack development with Flutter/Dart and
-            Laravel. I thrive on solving complex problems by crafting
-            intelligent solutions, from chatbots to automated verification
-            systems and engaging mobile apps.
+            applications through full-stack development!
           </p>
+          <p className="text-base md:text-lg font-light leading-relaxed mb-4 text-justify">
+            and I’m always curious to learn more when it comes to new technologies and creative coding.
+          </p>
+          <div className="mt-4 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
+            <a
+              href={cvPdf}
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2 rounded-full border border-blue-400 text-blue-400 text-sm md:text-base hover:bg-blue-400/10 transition-colors duration-200"
+            >
+              Resume
+            </a>
+            <a
+              href={portfolioPdf}
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2 rounded-full border border-blue-400 text-blue-400 text-sm md:text-base hover:bg-blue-400/10 transition-colors duration-200"
+            >
+              Portfolio
+            </a>
+          </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center md:justify-end items-start">
           <img

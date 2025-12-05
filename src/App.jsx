@@ -12,18 +12,24 @@ function App() {
   return (
     <Router> {/* Wrap your application with Router */}
       <div className="App font-poppins">
-        <Header />
         <Routes> {/* Define your routes here */}
-          <Route path="/" element={
-            <>
-              <MyProject />
-              <ProjectShowcase />
-            </>
-          } />
-          <Route path="/another-projects-page" element={<FullProject />} /> {/* Route for the full projects page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <MyProject />
+                <ProjectShowcase />
+                <AboutContact />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/fullproject"
+            element={<FullProject />}
+          /> {/* Route for the full projects page */}
         </Routes>
-        <AboutContact />
-        <Footer />
       </div>
     </Router>
   );

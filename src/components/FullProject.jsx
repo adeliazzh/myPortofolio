@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png';
 import project4 from '../assets/project4.png';
 import project5 from '../assets/project5.png'; 
 import project6 from '../assets/project6.png'; 
-
-
+import project12 from '../assets/project12.png';
+import project15 from '../assets/project15.png';
 const FullProject = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const projects = [
+    {
+      id: 'project15',
+      src: project15,
+      alt: 'AIFA Chatbot',
+      title: 'AIFA Chatbot',
+      description: 'AI For All Chatbot, Your Company’s AI Brain. Imagine if your company’s documents, SOPs, reports, and slides could talk back to you clearly, instantly, and in your language. That\'s what AIFA Chatbot is built for.',
+      technologies: ['React.js', 'Ollama', 'ChromaDB'],
+      link: ''
+    },
     {
       id: 'project1',
       src: project1,
@@ -16,24 +29,6 @@ const FullProject = () => {
       title: 'Optical Character Recognition (OCR) for Packaging Verification',
       description: 'Developed an automated pipeline for verifying product packaging labels at PT Mattel Indonesia. The system processes digital images of product labels and requirements to detect and recognize symbols and text.',
       technologies: ['PyTorch', 'YOLOv11', 'YOLOv12', 'RF-DETR', 'Llama'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
-    },
-    {
-      id: 'project2',
-      src: project3,
-      alt: 'BUDI AI Chatbot',
-      title: 'BUDI AI Chatbot',
-      description: 'BUDI or Study Buddy Chatbot, is an AI-powered interactive learning partner designed to answer science questions and engage in casual conversation.',
-      technologies: ['DialoGPT', 'Flutter', 'Dart'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
-    },
-    {
-      id: 'project3',
-      src: project2,
-      alt: 'Object Detection',
-      title: 'Object Detection',
-      description: 'This computer vision project utilizes YOLOv8N and Faster R-CNN object detection models to classify waste.',
-      technologies: ['YOLOv8N', 'PyTorch', 'CNN', 'OpenCV'],
       link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
     },
     {
@@ -47,27 +42,57 @@ const FullProject = () => {
     },
     {
       id: 'project5',
-      src: project5, // Make sure to have project5.png in your assets folder
-      alt: 'Project 5 Title',
-      title: 'Project 5 Title',
-      description: 'Description for project 5. This is a placeholder description for the fifth project.',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Update with actual link
+      src: project5,
+      alt: 'Space Pals',
+      title: 'Space Pals',
+      description: 'Space Pals is an interactive educational mobile application designed to engage children in space exploration through immersive 3D visualizations, storytelling, and collectible fun facts.',
+      technologies: ['Flutter', 'Dart', 'Firebase'],
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
+    },
+    {
+      id: 'project3',
+      src: project3,
+      alt: 'Object Detection',
+      title: 'Object Detection',
+      description: 'This computer vision project utilizes YOLOv8N and Faster R-CNN object detection models to classify waste.',
+      technologies: ['YOLOv8N', 'PyTorch', 'CNN', 'OpenCV'],
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
+    },
+    {
+      id: 'project12',
+      src: project12,
+      alt: 'Project 12',
+      title: 'Project 12',
+      description: 'Description for this project will be added soon.',
+      technologies: ['Coming Soon'],
+      link: ''
     },
     {
       id: 'project6',
-      src: project6, // Make sure to have project6.png in your assets folder
+      src: project6,
       alt: 'Project 6 Title',
       title: 'Project 6 Title',
       description: 'Description for project 6. This is a placeholder description for the sixth project.',
       technologies: ['Python', 'Django', 'PostgreSQL'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/' // Update with actual link
+      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
     },
   ];
 
   return (
-    <section className="relative h-auto py-10 lg:py-20 flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full max-w-screen-xl">
+    <section className="relative h-auto pt-6 pb-10 lg:pt-10 lg:pb-16 flex flex-col items-center w-full">
+      <div className="w-full mb-4 sticky top-0 z-20 bg-[#08062D]">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36">
+          <Link
+            to="/"
+            className="inline-flex items-center text-blue-400 hover:text-blue-200 text-lg md:text-xl font-medium"
+          >
+            <span className="mr-2 text-2xl">←</span>
+            <span>Back to Home</span>
+          </Link>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 sm:gap-6 w-full max-w-screen-xl items-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36">
         {projects.map((project) => (
           <a
             key={project.id}

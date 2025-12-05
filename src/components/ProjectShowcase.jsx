@@ -4,6 +4,8 @@ import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png';
 import project4 from '../assets/project4.png';
+import project15 from '../assets/project15.png';
+import project5 from '../assets/project5.png';
 
 const ProjectShowcase = () => {
   const projects = [
@@ -18,20 +20,19 @@ const ProjectShowcase = () => {
     },
     {
       id: 'project2',
-      src: project3,
-      alt: 'BUDI AI Chatbot',
-      title: 'BUDI AI Chatbot',
-      description: 'BUDI or Study Buddy Chatbot, is an AI-powered interactive learning partner designed to answer science questions and engage in casual conversation.',
-      technologies: ['DialoGPT', 'Flutter', 'Dart'],
-      link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
+      src: project15,
+      alt: 'AIFA Chatbot',
+      title: 'AIFA Chatbot',
+      description: 'AI For All Chatbot, Your Company’s AI Brain. Imagine if your company’s documents, SOPs, reports, and slides could talk back to you clearly, instantly, and in your language. That\'s what AIFA Chatbot is built for.',
+      technologies: ['React.js', 'Ollama', 'ChromaDB'],
     },
     {
       id: 'project3',
-      src: project2,
-      alt: 'Object Detection',
-      title: 'Object Detection',
-      description: 'This computer vision project utilizes YOLOv8N and Faster R-CNN object detection models to classify waste.',
-      technologies: ['YOLOv8N', 'PyTorch', 'CNN', 'OpenCV'],
+      src: project5,
+      alt: 'Space Pals',
+      title: 'Space Pals',
+      description: 'Space Pals is an interactive educational mobile application designed to engage children in space exploration through immersive 3D visualizations, storytelling, and collectible fun facts.',
+      technologies: ['Flutter', 'Dart', 'Firebase'],
       link: 'https://www.linkedin.com/in/adeliazhafira17/details/projects/'
     },
     {
@@ -97,7 +98,7 @@ const ProjectShowcase = () => {
           <img
             src={projects[1].src}
             alt={projects[1].alt}
-            className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
+            className="object-cover object-left w-full h-full transform group-hover:scale-105 transition-transform duration-300"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/400x400?text=Image+Error"; }}
           />
           <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-start justify-end p-3 sm:p-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"> {/* Adjusted padding */}
@@ -179,7 +180,7 @@ const ProjectShowcase = () => {
       </div>
 
       <div className="w-full text-right mt-8">
-        <Link to="/another-projects-page" className="text-blue-400 hover:text-blue-600 text-lg md:text-xl font-medium">
+        <Link to="/fullproject" className="text-blue-400 hover:text-blue-600 text-lg md:text-xl font-medium">
           More of my projects &gt;
         </Link>
       </div>
